@@ -139,12 +139,14 @@
                     form.reset(); 
                 } 
                 
-                // Закрытие модального окна по клику на фон 
-                document.getElementById('contactModal').addEventListener('click', function(event) { 
-                    if (event.target === this) { 
-                        this.close(); 
-                    } 
-                }); 
+                // Закрытие модального окна по клику на кнопку
+                
+
+                document.querySelector('.btn-secondary').addEventListener('click', function() {
+                    var modal = document.getElementById('contactModal');
+                    modal.close('cancel');
+                });
+                
                 
                 // Обработка отправки формы через Enter (предотвращаем стандартное 
                 document.getElementById('feedbackForm').addEventListener('keypress', function(event) { 
