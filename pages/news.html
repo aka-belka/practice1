@@ -3,29 +3,66 @@
     <head> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Семестровая работа</title> 
+        <title>Новости</title> 
+        <link rel="stylesheet" href="../style/styles.css">
     </head> 
     <body> 
-        <div id="header">Хэдер</div> 
-        <div id="menu"> 
-            <ul> 
-                <li><a href="../index.html">Главная</a></li> 
-                <li><a href="news.html">Новости</a></li> 
-                <li><a href="practices.html">Практики</a></li>  
-                <li><a href="goods.html">Товары</a></li> 
-                <li><a href="contacts.html">Контакты</a></li> 
-            </ul> 
-        </div>
-        <h1>Новость 1</h1> 
-        <p>24.09.2025 10:20  infopol</p>
-        <div>В Бурятии мужчина купил 18 килограммов байкальского омуля и попал под «уголовку».</div> 
-        <h1>Новость 2</h1> 
-        <p>18.09.2025 12:12  infopol</p>
-        <div>Мужчина обворовал знакомую женщину в Бурятии.Она попросила его приглядеть за домашним 
-        скотом, а он «обчистил» ее дом.</div> 
-        <h1>Новость 3</h1> 
-        <p>21.09.2025 15:00  vc.ru</p>
-        <div>Экскурсии в Улан‑Удэ 2025: Иволгинский дацан, Арбат, старообрядческие сёла.</div> 
-        <div id="footer">Футер</div>     
+        <div class="page-container"> 
+            <header class="header">
+                <h1>Новости</h1>
+            </header> 
+            <nav class="nav"> 
+                <ul class="nav-list">  
+                    <li class="nav-item"><a class="nav-link" 
+                    href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="practices.html">Практики</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="goods.html">Товары</a></li>   
+                    <li class="nav-item"><a class="nav-link" 
+                    href="contacts0.html">Контакты</a></li> 
+                </ul> 
+            </nav>
+            <main class="content"> 
+                <section class="news-container">
+                    <h2 class="section-title">Последние новости</h2>
+                    <article class="news-card">  
+                        <header class="news-header">
+                            <h2 class="news-title">Новость 1</h2>
+                            <p class="news-info">24.09.2025 10:20  infopol</p>
+                        </header> 
+                        <div class="news-desc">
+                            <p>В Бурятии мужчина купил 18 килограммов байкальского омуля и попал под «уголовку».</p>
+                        </div>
+                    </article> 
+                        
+                    <article class="news-card">  
+                        <header class="news-header">
+                            <h2 class="news-title">Новость 2</h2>  
+                            <p class="news-info">18.09.2025 12:12  infopol</p>
+                        </header>
+                        <div class="news-desc">
+                            <p>Мужчина обворовал знакомую женщину в Бурятии.Она попросила его приглядеть за домашним 
+                            скотом, а он «обчистил» ее дом.</p>
+                        </div>
+                    </article> 
+
+                    <article class="news-card">  
+                        <header class="news-header">
+                            <h2 class="news-title">Новость 3</h2>  
+                            <p class="news-info">21.09.2025 15:00  vc.ru</p>
+                        </header>
+                        <div classs="news-desc">
+                            <p>Экскурсии в Улан‑Удэ 2025: Иволгинский дацан, Арбат, старообрядческие сёла.</p>
+                        </div>
+                    </article> 
+                </section>
+            </main>
+            <footer class="footer">
+                <p>© 2025 Новостной портал. Все права защищены</p>
+            </footer> 
+        </div>  
     </body>
  </html>

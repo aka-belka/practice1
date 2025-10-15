@@ -3,49 +3,88 @@
     <head> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Семестровая работа</title> 
+        <title>Главная - портфолио</title>
+        <link rel="stylesheet" href="style/styles.css"> 
     </head> 
     <body> 
-        <div id="header">Хэдер</div> 
-        <div id="menu"> 
-            <ul> 
-                <li><a href="index.html">Главная</a></li> 
-                <li><a href="pages/news.html">Новости</a></li> 
-                <li><a href="pages/practices.html">Практики</a></li>  
-                <li><a href="pages/goods.html">Товары</a></li> 
-                <li><a href="pages/contacts.html">Контакты</a></li> 
-            </ul> 
-        </div> 
-        <div id="content"> 
-            <p>Информация об авторе</p> 
-            <img src="images/photo.jpg" alt="Фото автора" width="200" 
-        height="250"> 
-            <p>Бельская Валерия Сергеевна</p> 
-            <p>ЭФБО-02-24</p> 
-            <p>Обо мне: Родилась в Бурятии в 2006-м, на границе города и бесконечных полей. 
-                Глупость была не пороком, а состоянием души. В четыре года вела задушевные 
-                беседы с игрушками. Дальше школа, форма, первая косметика и мечты о великом. 
-                Силу я находила не в драках, а в умении манипулировать мальчишками с помощью улыбки.</p> 
-            <div>Навык 1</div> 
-            <div>Навык 2</div> 
-            <div>Навык 3</div> 
-            <div>Навык 4</div> 
-            <div> 
-                    Мой опыт работы: 
-                    <div> 
-                        Опыт 1<br> 
-                        Работала певицей. Все родственники на праздниках были довольны концертами. 
+        <div class="page-container"> 
+            <header class="header">
+                <h1 class="header__title">Мое портфолио</h1>
+            </header> 
+            <nav class="nav"> 
+                <ul class="nav__list"> 
+                    <li class="nav-item nav__item--active">
+                        <a class="nav__link" href="index.html">Главная</a>
+                    </li> 
+                    <li class="nav__item">
+                        <a class="nav__link" href="pages/news.html">Новости</a>
+                    </li> 
+                    <li class="nav__item">
+                        <a class="nav__link" href="pages/practices.html">Практики</a>
+                    </li>  
+                    <li class="nav__item">
+                        <a class="nav__link" href="pages/goods.html">Товары</a>
+                    </li> 
+                    <li class="nav__item">
+                        <a class="nav__link" href="pages/contacts.html">Контакты</a>
+                    </li> 
+                </ul> 
+            </nav> 
+            <main class="content"> 
+                <section class="profile">
+                    <div class="profile__card"> 
+                        <h1 class="profile__title">Информация об авторе</h1> 
+                        <img  class="profile__photo" src="images/photo.jpg" alt="Фото автора"> 
+                        <div class="profile__info">
+                            <h2 class="profile__name">Бельская Валерия Сергеевна</h2>
+                            <p class="profile__group">ЭФБО-02-24</p>
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="about"> 
+                    <h2 class="about__title">Обо мне</h2>
+                    <div class="about__content">
+                        <p class="about__text"> Родилась в Бурятии в 2006-м, на границе города и бесконечных полей. 
+                        Глупость была не пороком, а состоянием души. В четыре года вела задушевные 
+                        беседы с игрушками. Дальше школа, форма, первая косметика и мечты о великом. 
+                        Силу я находила не в драках, а в умении манипулировать мальчишками с помощью улыбки.</p> 
+                    </div>
+                </section>
+
+                <section class="skills"> 
+                    <h2 class="skills__title">Мои навыки</h2>
+                    <div class="skills__grid"> 
+                        <div class="skill__tag">Целеустремленная</div> 
+                        <div class="skill__tag">Ответственная</div> 
+                        <div class="skill__tag">Креативная</div> 
+                        <div class="skill__tag">Стрессоустойчивая</div> 
+                    </div>
+                </section>
+
+                <section class="experience"> 
+                    <h2 class="experience__title">Мой опыт работы</h2> 
+                    <div class="experience__grid">  
+                        <article class="experience-card">
+                            <h3 class="experience-card__title">Опыт 1</h3>  
+                            <p class="experience-card__desc">Работала певицей. Все родственники на праздниках были довольны концертами.</p>
+                        </article>
+
+                        <article class="experience-card">  
+                            <h3 class="experience-card__title">Опыт 2</h3>  
+                            <p class="experience-card__desc">Работала барабанщицей. Правда соседи иногда жаловались.</p>
+                        </article> 
+
+                        <article  class="experience-card">  
+                            <h3 class="experience-card__title">Опыт 3</h3>  
+                            <p class="experience-card__desc">Работала массажером. Сестра и мама были очень рады.</p>
+                        </article>
                     </div> 
-                    <div> 
-                        Опыт 2<br> 
-                        Работала барабанщицей. Правда соседи иногда жаловались.
-                    </div> 
-                    <div> 
-                        Опыт 3<br> 
-                        Работала массажером. Сестра и мама были очень рады. 
-                    </div> 
-            </div> 
-        </div> 
-        <div id="footer">Футер</div>     
+                </section> 
+            </main> 
+            <footer class="footer">
+                <p class="footer__text">© 2025 Главная страница. Все права защищены.</p>
+            </footer>
+        </div>     
     </body>
  </html>

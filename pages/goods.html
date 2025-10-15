@@ -3,31 +3,64 @@
     <head> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Семестровая работа</title> 
+        <title>Товары</title> 
+        <link rel="stylesheet" href="../style/styles.css">
     </head> 
     <body> 
-        <div id="header">Хэдер</div> 
-        <div id="menu"> 
-            <ul> 
-                <li><a href="../index.html">Главная</a></li> 
-                <li><a href="news.html">Новости</a></li> 
-                <li><a href="practices.html">Практики</a></li>  
-                <li><a href="goods.html">Товары</a></li> 
-                <li><a href="contacts.html">Контакты</a></li> 
-            </ul> 
-        </div> 
-        <img src="../images/goods1.png" alt="Фото товара 1" width="300" 
-        height="250"> 
-        <div>Товар Audi R8 V10 performance II (4S) Рестайлинг, 2023</div> 
-        <div>Цена товара 29 981 660</div> 
-        <img src="../images/goods2.png" alt="Фото товара 2" width="200" 
-        height="250"> 
-        <div>Товар Hermes Birkin 25 Gris pale</div> 
-        <div>Цена товара 2 753 500</div> 
-        <img src="../images/goods3.png" alt="Фото товара 3" width="200" 
-        height="250"> 
-        <div>Товар Кольцо Cartier SOLITAIRE 0 24 CT D/VVS2 PLATINUM RING</div> 
-        <div>Цена товара 417 600</div> 
-        <div id="footer">Футер</div>     
+        <div class="page-container"> 
+            <header class="header">
+                <h1>Наши товары</h1>
+            </header> 
+            <nav class="nav"> 
+                <ul class="nav-list">  
+                    <li class="nav-item"><a class="nav-link" 
+                    href="../index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="practices.html">Практики</a></li>
+                    <li class="nav-item"><a class="nav-link" 
+                    href="goods.html">Товары</a></li>   
+                    <li class="nav-item"><a class="nav-link" 
+                    href="contacts.html">Контакты</a></li> 
+                </ul> 
+            </nav> 
+            <main class="content">
+                <section class="goods-contaner"> 
+                    <h2 class="section-title">Каталог товаров</h2>
+                    <p class="section-desc">Мы предлагаем широкий ассортимент качественных товаров по доступным ценам</p>
+                    <div class="goods-grid">
+                        <article class="good-card">
+                            <img src="../images/goods1.png" alt="Фото товара 1" width="200" 
+                            height="250"> 
+                            <h3 class="good-name">Audi R8 V10 performance II (4S) Рестайлинг, 2023</h3> 
+                            <p class="good-desc">Мощность 620 л.с., разгон до 100 км/ч за 3.4 секунды и максимальная скорость 320 км/ч.</p>
+                            <p class="price"> 29 981 660 P</p> 
+                        </article>
+
+                        <article class="good-card">
+                            <img src="../images/goods2.png" alt="Фото товара 2" width="200" 
+                            height="250"> 
+                            <h3 class="good-name">Hermes Birkin 25 Gris pale</h3> 
+                            <p class="good-desc">Полный комплект: коробка, пыльник, карточка по уходу за кожей, фетр, чек. Размер: 25 см. Цвет: Gris pale. Sellier. 
+                            Кожа: Epsom. Фурнитура: Золото</p>
+                            <p class="price"> 2 753 500 P</p> 
+                        </article>
+
+                        <article class="good-card">
+                            <img src="../images/goods3.png" alt="Фото товара 3" width="200" 
+                            height="250"> 
+                            <h3 class="good-name">Кольцо Cartier SOLITAIRE 0 24 CT D/VVS2 PLATINUM RING</h3> 
+                            <p class="good-desc">Платина, 1 бриллиант круглой огранки цвет D, чистота VVS2. Проба для драгметала 950.
+                            Полный комплект. Сертификат Cartier, GIA.</p>
+                            <p class="price">417 600 P</p>
+                        </article>
+                    </div>
+                </section> 
+            </main>
+            <footer class="footer">
+                <p>© 2025 Интернет-магазин. Все права защищены</p>
+            </footer>  
+        </div>   
     </body>
  </html>
