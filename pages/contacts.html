@@ -7,56 +7,54 @@
         <link rel="stylesheet" href="../style/styles.css">
     </head> 
     <body> 
-        <div class="page-container"> 
+        <div class="page"> 
             <header class="header">
-                <h1>Контакты</h1>
-            </header> 
+                <h1 class="header__title">Контакты</h1>
+            </header>  
             <nav class="nav"> 
-                <ul class="nav-list">  
-                    <li class="nav-item"><a class="nav-link" 
-                    href="../index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" 
-                    href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" 
-                    href="practices.html">Практики</a></li>
-                    <li class="nav-item"><a class="nav-link" 
-                    href="goods.html">Товары</a></li>   
-                    <li class="nav-item"><a class="nav-link" 
-                    href="contacts.html">Контакты</a></li> 
+                <ul class="nav__list"> 
+                    <li class="nav-item">
+                        <a class="nav__link" href="../index.html">Главная</a>
+                    </li> 
+                    <li class="nav__item">
+                        <a class="nav__link" href="news.html">Новости</a>
+                    </li> 
+                    <li class="nav__item">
+                        <a class="nav__link" href="practices.html">Практики</a>
+                    </li>  
+                    <li class="nav__item">
+                        <a class="nav__link" href="goods.html">Товары</a>
+                    </li> 
+                    <li class="nav__item nav__item--active">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li> 
                 </ul> 
-            </nav>
+            </nav> 
             <main class="content"> 
-                <section class="contacts-contaner"> 
-                    <h2 class="section-title">Наши контакты</h2>
-                    <article class="contacts-info">
-                        <h3>Адрес электронной почты</h3>
-                        <p>sergeevnau18@gmail.com или sergeevnau18@outlook.ru</p>
-                    </article> 
-                    <article class="contacts-info">
-                        <h3>Физический адрес</h3> 
-                        <p>г. Москва, ул. Вернадского, 78</p>
-                    </article> 
-
-                    <div class="contacts-grid">
-                        <article class="contacts-card">
-                            <h3 >Телефон</h3>
-                            <p>+7 999 999 99 99</p>
+                <section class="contacts"> 
+                    <h2 class="contacts__title">Наши контакты</h2>
+                    <div class="contacts__list">
+                        <article class="contact-item">
+                            <h3 class="contact-item__title">Адрес электронной почты</h3>
+                            <p class="contact-item__value">sergeevnau18@gmail.com</p>
                         </article> 
-                        <article class="contacts-card">
-                            <h3>Время работы</h3>
-                            <p>Пн-Сб: 9:00-18:00</p>
-                        </article>
-                        <article class="contacts-card">
-                            <h3>Социальные сети</h3>
-                            <p>VK, Telegram, WhatsApp</p>
+                        <article class="contact-item">
+                            <h3 class="contact-item__title">Телефон</h3>
+                            <p class="contact-item__value">+7 999 999 99 99</p>
+                        </article> 
+                        <article class="contact-item">
+                            <h3 class="contact-item__title">Социальные сети</h3>
+                            <p class="contact-item__value">VK, Telegram, WhatsApp</p>
                         </article>
                     </div>
-
                     <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
                 </section> 
             </main>
-            <footer class="footer">© 2025 Контактная информация. Все права защищены</footer>
-            
+
+            <footer class="footer">
+                <p class="footer__text">© 2025 Контактная информация. Все права защищены</p>
+            </footer>
+
             <dialog id="contactModal"> 
                 <div class="modal-header"> 
                     <h2>Форма обратной связи</h2> 
