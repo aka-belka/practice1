@@ -5,10 +5,15 @@
     --color-light: #ecf0f1; 
     --color-dark: #34495e; 
     --color-text: #2c3e50; 
+    --color-desc: #7f8c8d;
     --color-white: #ffffff; 
     --color-line:#f8f9fa;
+    --color-black: rgba(0, 0, 0, 0.6); 
+    --color-red: rgb(211, 81, 81);
     --shadow: 0 2px 5px rgba(0,0,0,0.1); 
+    --shadow-btn: 0 6px 20px rgba(62, 77, 90, 0.4);
     --radius: 8px; 
+    --radius-btn: 30px;
     --space-sm: 10px; 
     --space-md: 20px; 
     --space-lg: 30px; 
@@ -192,29 +197,15 @@
     color: #666;  
 } 
 
-/* Адаптивность */ 
-@media (max-width: 768px) { 
-    .profile__card { 
-        flex-direction: column; 
-        text-align: center; 
-    } 
-    .nav__list { 
-        flex-direction: column; 
-    } 
-    .skills__list { 
-        justify-content: center; 
-    } 
-    .experience__grid { 
-        grid-template-columns: 1fr; 
-    } 
-} 
-
 /* ====================================== СТРАНИЦА КОНТАКТЫ================================================= */
 .contacts{ 
     background: var(--color-white); 
     padding: var(--space-lg); 
     border-radius: var(--radius); 
     box-shadow: var(--shadow); 
+    justify-content: center; 
+    gap: var(--space-sm);
+    text-align: center; 
 } 
 .contacts__title{
     color: var(--color-main); 
@@ -245,97 +236,84 @@
 .contact-button{
     margin: var(--space-md);
     border: none;
-    color: white; /* Белый цвет текста */ 
-    padding: 15px 40px; /* Внутренние отступы */ 
-    border-radius: 30px; /* Круглые углы (капсульная форма) */ 
-    font-weight: 600; /* Жирный шрифт */ 
-    font-size: 16px; /* Размер шрифта */ 
-    
-    justify-content: center; /* Выравнивание по центру */ 
+    color: var(--color-white);  
+    border-radius: var(--radius-btn);  
+    font-weight: bold; 
+    font-size: 1rem; 
     transition: transform 0.3s ease;
     background: var(--color-main); 
-    color: var(--color-white); 
     text-align: center; 
     padding: var(--space-md); 
-    margin-top: var(--space-lg);
-    justify-content: center; /* Выравнивание по центру */  
-    gap: 15px; /* Расстояние между навыками */ 
-    margin: 30px 0; /* Вертикальные отступы */ 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    text-align: center; /* Выравнивание по центру */ 
-    margin-bottom: 40px; /* Отступ снизу */ 
+    margin-top: var(--space-lg); 
 }
 
 .contact-button:hover { 
-    transform: translateY(-3px); /* Поднятие элемента при наведении */ 
-    box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4); /* Увеличение тени при 
-    наведении */
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow-btn);
 } 
 /* ======================================== СТРАНИЦА ТОВАРЫ=========================================== */
-.goods-contaner { 
-    justify-content: center; /* Выравнивание по центру */  
-    gap: 15px; /* Расстояние между навыками */ 
-    margin: 30px 0; /* Вертикальные отступы */ 
+.goods { 
+    justify-content: center; 
+    gap: var(--space-sm);
+    margin: var(--space-lg);
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    text-align: center; /* Выравнивание по центру */ 
-    margin-bottom: 40px; /* Отступ снизу */ 
+    text-align: center; 
+    margin-bottom: var(--space-lg);
 } 
 
-.title-goods { 
-    font-size: 32px; /* Размер шрифта заголовка */ 
-    color: #2c3e50; /* Темно-синий цвет текста */ 
-    margin-bottom: 10px; /* Отступ снизу */ 
-    font-weight: 300; /* Легкое начертание шрифта */ 
+.goods__title { 
+    font-size: 2rem; 
+    color: var(--color-text); 
+    margin-bottom: var(--space-sm);  
+    font-weight: normal; 
 } 
 
-.section-desc{
+.goods__desc{
     text-align: center;
-    color: #7f8c8d;
-    margin-bottom: 40px;
-    font-size: 18px;
+    color: var(--color-desc);
+    margin-bottom: var(--space-lg);
+    font-size: 1.1rem;
 }
-.goods-grid{
+.goods__list{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
 }
 
-.good-card{
-    background: white;
-    max-width: 250px;
-    color:black; /* Белый цвет текста */ 
-    padding: 12px 25px; /* Внутренние отступы */ 
-    border-radius: 25px; /* Круглые углы (капсульная форма) */ 
-    box-shadow: 0 4px 15px rgba(119, 121, 123, 0.3); /* Тень с голубым оттенком */ 
-    transition: transform 0.3s ease; /* Плавные анимации при изменении */ 
+.good-item{
+    background: var(--color-white);
+    color: var(--color-text); 
+    padding: var(--space-md);
+    border-radius: var(--radius-btn); 
+    box-shadow: var(--shadow-btn);
+    transition: transform 0.3s ease; 
 }
- .good-name { 
-    font-size: 18px; /* Размер шрифта заголовка */ 
-    color: #2c3e50; /* Темно-синий цвет текста */ 
-    margin: 10px; /* Отступ снизу */ 
-    font-weight: 600; /* Жирный шрифт */ 
+ .good-item__name { 
+    font-size: 1.1rem;
+    color: var(--color-text); 
+    margin: var(--space-sm);
+    font-weight: bold; 
 }
 
-.good-desc{
-    color: #7f8c8d;
-    font-size: 14px;
+.good-item__desc{
+    color: var(--color-desc);
+    font-size: 0.9rem;
     line-height: 1.5;
-    margin: 10px 0;
-    min-height: 60px;
+    margin: var(--space-sm);
 }
 
-.price{
-    font-size: 20px; /* Размер шрифта заголовка */ 
-    color: red; /* Темно-синий цвет текста */ 
-    margin: 5px; /* Отступ */ 
-    text-wrap: wrap; /* Перенос на новую строку при необходимости */
-    font-weight: 700; /* Жирный шрифт */ 
+.good-item__price{
+    font-size: 1.15rem; 
+    color: var(--color-red); 
+    margin: var(--space-sm);
+    text-wrap: wrap;
+    font-weight: bold;
 }
 
-.good-card:hover { 
-    transform: translateY(-3px); /* Поднятие элемента при наведении */ 
-    
+.good-item:hover { 
+    transform: translateY(-3px); 
+    box-shadow: var(--shadow-btn);
 } 
 
 /* ================================================= СТРАНИЦА НОВОСТИ============================================== */
@@ -383,14 +361,12 @@
 
 /* ================================================= МОДАЛЬНОЕ ОКНО============================================== */
 dialog::backdrop { 
-    background: rgba(0, 0, 0, 0.6); 
+    background: var(--color-black);
     animation: fadeIn 0.3s ease; 
 } 
 dialog { 
     border: none; 
-    border-radius: 12px; 
-    padding: 0; 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+    box-shadow: var(--shadow-btn); 
     animation: slideIn 0.3s ease; 
     max-width: 500px; 
     width: 90vw; 
@@ -498,4 +474,18 @@ dialog {
     .btn { 
         width: 100%; 
     }
+    .profile__card { 
+        flex-direction: column; 
+        text-align: center; 
+    } 
+    .nav__list { 
+        flex-direction: column; 
+    } 
+    .skills__list,.skill { 
+        justify-content: center; 
+        display: grid;
+    } 
+    .experience__grid { 
+        grid-template-columns: 1fr; 
+    } 
 }
