@@ -6,7 +6,16 @@
         <title>Товары</title> 
         <link rel="stylesheet" href="../style/styles.css">
     </head> 
-    <body> 
+    <body>  
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-checkbox" class="theme-switch__checkbox">
+            <label for="theme-checkbox" class="theme-switch__label">
+                <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-switch__text">Темная тема</span>
+            </label>
+        </div>
         <div class="page"> 
             <header class="header">
                 <h1 class="header__title">Наши товары</h1>
@@ -35,30 +44,30 @@
                     <h2 class="goods__title">Каталог товаров</h2>
                     <p class="goods__desc">Мы предлагаем широкий ассортимент качественных товаров по доступным ценам</p>
                     <div class="goods__list">
-                        <article class="good-item">
+                        <article class="good-item good-item--discount">
                             <img src="../images/goods1.png" alt="Фото товара 1" width="200" 
                             height="250"> 
                             <h3 class="good-item__name">Audi R8 V10 performance II (4S) Рестайлинг, 2023</h3> 
                             <p class="good-item__desc">Мощность 620 л.с., разгон до 100 км/ч за 3.4 секунды и максимальная скорость 320 км/ч.</p>
-                            <p class="good-item__price"> 29 981 660 P</p> 
+                            <p class="good-item__price" data-original-price="33 200 000 ₽"> 29 981 660 ₽</p> 
                         </article>
 
-                        <article class="good-item">
+                        <article class="good-item good-item--normal">
                             <img src="../images/goods2.png" alt="Фото товара 2" width="200" 
                             height="250"> 
                             <h3 class="good-item__name">Hermes Birkin 25 Gris pale</h3> 
                             <p class="good-item__desc">Полный комплект: коробка, пыльник, карточка по уходу за кожей, фетр, чек. Размер: 25 см. Цвет: Gris pale. Sellier. 
                             Кожа: Epsom. Фурнитура: Золото</p>
-                            <p class="good-item__price"> 2 753 500 P</p> 
+                            <p class="good-item__price"> 2 753 500 ₽</p> 
                         </article>
 
-                        <article class="good-item">
+                        <article class="good-item good-item--selected">
                             <img src="../images/goods3.png" alt="Фото товара 3" width="200" 
                             height="250"> 
                             <h3 class="good-item__name">Кольцо Cartier SOLITAIRE 0 24 CT D/VVS2 PLATINUM RING</h3> 
                             <p class="good-item__desc">Платина, 1 бриллиант круглой огранки цвет D, чистота VVS2. Проба для драгметала 950.
                             Полный комплект. Сертификат Cartier, GIA.</p>
-                            <p class="good-item__price">417 600 P</p>
+                            <p class="good-item__price">417 600 ₽</p>
                         </article>
                     </div>
                 </section> 
@@ -67,5 +76,26 @@
                 <p class="footer__text">© 2025 Интернет-магазин. Все права защищены.</p>
             </footer>
         </div>   
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeCheckbox = document.getElementById('theme-checkbox');
+                
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    themeCheckbox.checked = true;
+                }
+                
+                themeCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.classList.add('dark-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.body.classList.remove('dark-theme');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            });
+        </script>   
     </body>
  </html>

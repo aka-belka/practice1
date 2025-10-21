@@ -6,7 +6,16 @@
         <title>Контакты</title> 
         <link rel="stylesheet" href="../style/styles.css">
     </head> 
-    <body> 
+    <body>  
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-checkbox" class="theme-switch__checkbox">
+            <label for="theme-checkbox" class="theme-switch__label">
+                <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-switch__text">Темная тема</span>
+            </label>
+        </div>
         <div class="page"> 
             <header class="header">
                 <h1 class="header__title">Контакты</h1>
@@ -47,7 +56,7 @@
                             <p class="contact-item__value">VK, Telegram, WhatsApp</p>
                         </article>
                     </div>
-                    <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+                    <button class="contact__button" onclick="contactModal.showModal()">Связаться с нами</button>
                 </section> 
             </main>
 
@@ -55,31 +64,31 @@
                 <p class="footer__text">© 2025 Контактная информация. Все права защищены</p>
             </footer>
 
-            <dialog id="contactModal"> 
-                <div class="modal-header"> 
-                    <h2>Форма обратной связи</h2> 
-                </div> 
+            <dialog id="contactModal" class="modal"> 
+                <header class="modal__header"> 
+                    <h2 class="modal__title">Форма обратной связи</h2> 
+                </header> 
 
-                <div class="modal-content"> 
-                    <form id="feedbackForm" method="dialog"> 
-                        <div class="form-group"> 
-                            <label for="name">Имя <span class="required">*</span></label> 
-                            <input type="text" id="name" name="name" required placeholder="Введите ваше имя"> 
+                <div class="modal__content"> 
+                    <form id="feedbackForm" method="dialog" class="modal__form"> 
+                        <div class="modal__form-group"> 
+                            <label for="name" class="modal__label">Имя <span class="modal__required">*</span></label> 
+                            <input type="text" id="name" name="name" required placeholder="Введите ваше имя" class="modal__input"> 
                         </div> 
 
-                        <div class="form-group"> 
-                            <label for="phone">Телефон <span class="required">*</span></label> 
-                            <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX"> 
+                        <div class="modal__form-group"> 
+                            <label for="phone" class="modal__label">Телефон <span class="modal__required">*</span></label> 
+                            <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX" class="modal__input"> 
                         </div> 
 
-                        <div class="form-group"> 
-                            <label for="email">Электронная почта <span class="required">*</span></label> 
-                            <input type="email" id="email" name="email" required placeholder="example@mail.ru"> 
+                        <div class="modal__form-group"> 
+                            <label for="email" class="modal__label">Электронная почта <span class="modal__required">*</span></label> 
+                            <input type="email" id="email" name="email" required placeholder="example@mail.ru" class="modal__input"> 
                         </div> 
 
-                        <div class="form-group"> 
-                            <label for="category">Категория обращения <span class="required">*</span></label> 
-                            <select id="category" name="category" required> 
+                        <div class="modal__form-group"> 
+                            <label for="category" class="modal__label">Категория обращения <span class="modal__required">*</span></label> 
+                            <select id="category" name="category" required class="modal__select"> 
                                 <option value="">Выберите категорию</option> 
                                 <option value="technical">Техническая поддержка</option> 
                                 <option value="commercial">Коммерческое предложение</option> 
@@ -90,34 +99,27 @@
                             </select> 
                         </div> 
 
-                        <div class="form-group"> 
-                            <label for="message">Текст обращения <span class="required">*</span></label> 
-                            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea> 
+                        <div class="modal__form-group"> 
+                            <label for="message" class="modal__label">Текст обращения <span class="modal__required">*</span></label> 
+                            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..." class="modal__textarea"></textarea> 
                         </div> 
 
-                        <div class="modal-actions"> 
-                        <!-- Кнопка отмены с автоматическим закрытием через form method="dialog"-->
-                            <button type="submit" class="btn btn-secondary">Отмена</button> 
-                            <!-- Кнопка отправки с обработкой через JavaScript --> 
-                            <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button> 
+                        <div class="modal__actions"> 
+                            <button type="submit" class="btn btn--secondary">Отмена</button> 
+                            <button type="button" class="btn btn--primary" onclick="submitForm()">Отправить</button> 
                         </div> 
                     </form> 
                 </div> 
             </dialog> 
 
             <script> 
-                // Функция для отправки формы 
                 function submitForm() { 
                     const form = document.getElementById('feedbackForm'); 
                     const formData = new FormData(form); 
-
-                    // Простая валидация 
                     if (!form.checkValidity()) { 
                         form.reportValidity(); 
                         return; 
                     } 
-
-                    // Собираем данные формы 
                     const data = { 
                         name: formData.get('name'), 
                         phone: formData.get('phone'), 
@@ -125,36 +127,43 @@
                         category: formData.get('category'), 
                         message: formData.get('message') 
                     }; 
-
                     // В реальном приложении здесь был бы AJAX-запрос 
                     console.log('Данные формы:', data); 
-
-                    // Показываем уведомление об успешной отправке 
                     alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.'); 
-                    
-                    // Закрываем модальное окно 
                     contactModal.close(); 
-                    
-                    // Очищаем форму 
                     form.reset(); 
                 } 
-                
-                // Закрытие модального окна по клику на кнопку
-                
-
-                document.querySelector('.btn-secondary').addEventListener('click', function() {
+                document.querySelector('.btn--secondary').addEventListener('click', function() {
                     var modal = document.getElementById('contactModal');
                     modal.close('cancel');
                 });
-                
-                
-                // Обработка отправки формы через Enter (предотвращаем стандартное 
                 document.getElementById('feedbackForm').addEventListener('keypress', function(event) { 
                     if (event.key === 'Enter' && event.target.type !== 'textarea') { 
                         event.preventDefault(); 
                     } 
                 }); 
             </script>
-        </div>    
+        </div>     
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeCheckbox = document.getElementById('theme-checkbox');
+                
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    themeCheckbox.checked = true;
+                }
+                
+                themeCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.classList.add('dark-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.body.classList.remove('dark-theme');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            });
+        </script>   
     </body>
  </html>

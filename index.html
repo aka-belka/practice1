@@ -7,6 +7,15 @@
         <link rel="stylesheet" href="style/styles.css"> 
     </head> 
     <body> 
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-checkbox" class="theme-switch__checkbox">
+            <label for="theme-checkbox" class="theme-switch__label">
+                <svg class="theme-switch__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+                <span class="theme-switch__text">Темная тема</span>
+            </label>
+        </div>
         <div class="page"> 
             <header class="header">
                 <h1 class="header__title">Мое портфолио</h1>
@@ -84,6 +93,27 @@
             <footer class="footer">
                 <p class="footer__text">© 2025 Главная страница. Все права защищены.</p>
             </footer>
-        </div>     
+        </div>   
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const themeCheckbox = document.getElementById('theme-checkbox');
+                
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme === 'dark') {
+                    document.body.classList.add('dark-theme');
+                    themeCheckbox.checked = true;
+                }
+                
+                themeCheckbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        document.body.classList.add('dark-theme');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.body.classList.remove('dark-theme');
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            });
+        </script>   
     </body>
  </html>
